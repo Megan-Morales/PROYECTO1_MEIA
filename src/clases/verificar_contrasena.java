@@ -1,20 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package clases;
-
-/**
- *
- * @author emilio
- */
 public class verificar_contrasena {
-    public String verificar_contrasena (String Password)
-    {      
+    
+    public static String verificar (String Password)
+    {
         if (Password.length()< 6)
         {
-           return "Contraseña muy corta";
-        }
+           return "error";
+        }  
         else
         {
             int Puntuacion = 0;  
@@ -85,20 +77,24 @@ public class verificar_contrasena {
             
             if (Puntuacion >= 0 && Puntuacion <= 25) {
                 
-                return ("Contraseña Insegura...");
+                return "Contraseña Insegura...";
             }
             else if (Puntuacion >= 26 && Puntuacion <= 35) {
                 
-                return ("Contraseña poco Segura...");
+                return "Contraseña poco Segura...";
             }
             else if (Puntuacion >= 36 && Puntuacion <= 50) {
                 
-                return ("Contraseña Segura...");
+                return "Contraseña Segura...";
             }
             else if (Puntuacion >= 51) {
                 
-                return ("Contraseña muy Segura...");
-            }             
+                return "Contraseña muy Segura...";
+            }
+            
+        }
+        
+        return "error";
     }
-    
+
 }

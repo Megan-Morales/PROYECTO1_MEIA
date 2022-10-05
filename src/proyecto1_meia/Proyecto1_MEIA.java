@@ -5,6 +5,7 @@
  */
 package proyecto1_meia;
 import ventanas.Ventana_login;
+import ventanas.Ventana_crearUsuario;
 /**
  *
  * @author megan
@@ -17,7 +18,11 @@ public class Proyecto1_MEIA {
     public static void main(String[] args) {
         // TODO code application logic here
         Ventana_login menu = new Ventana_login();
-        menu.setVisible(true);
+        menu.setVisible(false);
+        
+        Ventana_crearUsuario crear_usuario = new Ventana_crearUsuario();
+        crear_usuario.setVisible(true);
+        
     }
     
 }
