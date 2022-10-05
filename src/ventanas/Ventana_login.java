@@ -6,7 +6,12 @@
 package ventanas;
 
 import clases.Usuario;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import ventanas.Ventana_Administrador;
 
 /**
  *
@@ -34,8 +39,8 @@ public class Ventana_login extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        txt_usuarioLogin = new javax.swing.JTextField();
+        txt_contrasenaLogin = new javax.swing.JPasswordField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btn_crearUsuario = new javax.swing.JButton();
@@ -68,53 +73,54 @@ public class Ventana_login extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(118, 118, 118)
-                .addComponent(jLabel3)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(16, 16, 16)
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGap(0, 23, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(62, 62, 62))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGap(16, 16, 16)
+                                    .addComponent(jLabel1)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txt_usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jLabel2)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                    .addComponent(txt_contrasenaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(23, 23, 23))
+                        .addGap(100, 100, 100)
+                        .addComponent(jLabel3))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(71, 71, 71)
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(32, 32, 32)
+                .addGap(44, 44, 44)
                 .addComponent(jLabel3)
-                .addGap(39, 39, 39)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txt_contrasenaLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addGap(30, 30, 30)
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btn_crearUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(37, Short.MAX_VALUE))
+                .addContainerGap(35, Short.MAX_VALUE))
         );
 
         pack();
@@ -126,13 +132,75 @@ public class Ventana_login extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try{
-            File archivo = new File("C:\\MEIA");
             
+            String usuarioBuscar = txt_usuarioLogin.getText();
+            String contrasenaBuscar = txt_contrasenaLogin.getText();
+           
+            File usuario = new File("C:\\MEIA\\usuario.txt");
+            File bitacoraUsuario = new File("C:\\MEIA\\bitacora_usuario.txt");
             
+            BufferedReader usuariol = new BufferedReader(new FileReader(usuario));
+            BufferedReader bitacoraUsuariol = new BufferedReader(new FileReader(bitacoraUsuario));
+             
+            String[] columnas;
+            String[] columnas2;
+            String lineaArchivo1;
+            String lineaArchivo2;
             
+            boolean encontro= false;
+            
+            while((lineaArchivo1 = usuariol.readLine()) != null ){
+                columnas = lineaArchivo1.split(";");
+            
+                if(columnas[0].equals(usuarioBuscar) && columnas[3].equals(contrasenaBuscar)){
+                    if(columnas[4].equals("1")){
+                       Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
+                       ventanaAdmin.setVisible(true);
+                       this.dispose(); //cerrar a ventana abierta
+                       encontro= true;
+                       break;
+                    }
+                    else{
+                      Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
+                       ventanaUsuario.setVisible(true);
+                       this.dispose(); //cerrar a ventana abierta 
+                       encontro= true;
+                       break;
+                    }
+                }
+                else{
+                    
+                }
+                
+                
+            }
+            
+            while((lineaArchivo2 = bitacoraUsuariol.readLine()) != null && encontro== false ){
+                columnas2 = lineaArchivo2.split(";");
+                
+                if(columnas2[0].equals(usuarioBuscar) && columnas2[3].equals(contrasenaBuscar)){
+                    if(columnas2[4].equals("1")){
+                       Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
+                       ventanaAdmin.setVisible(true);
+                       this.dispose(); //cerrar a ventana abierta
+                       break;
+                    }
+                    else{
+                      Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
+                       ventanaUsuario.setVisible(true);
+                       this.dispose(); //cerrar a ventana abierta  
+                       break;
+                    }
+                }
+                else{
+                    JOptionPane.showMessageDialog(null, "El usuario no existe o verifique la contraseña");
+                }
+            }
+            
+             
         }
         catch (Exception error){
-            
+            JOptionPane.showMessageDialog(null, "Error " + error);
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -186,7 +254,7 @@ public class Ventana_login extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPasswordField jPasswordField1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JPasswordField txt_contrasenaLogin;
+    private javax.swing.JTextField txt_usuarioLogin;
     // End of variables declaration//GEN-END:variables
 }
