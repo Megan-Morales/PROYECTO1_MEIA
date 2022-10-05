@@ -17,14 +17,14 @@ public class Usuario {
     String Nombre;
     String Apellido;
     String Password;
-    byte Rol;
+    boolean Rol;
     Date fecha_nacimiento;
     String correo_alterno;
     int Telefono;
     String Path_fotografia;
-    byte Estatus;
+    boolean Estatus;
 
-    public Usuario(String Usuario, String Nombre, String Apellido, String Password, byte Rol, Date fecha_nacimiento, String correo_alterno, int Telefono, String Path_fotografia, byte Estatus) {
+    public Usuario(String Usuario, String Nombre, String Apellido, String Password, boolean Rol, Date fecha_nacimiento, String correo_alterno, int Telefono, String Path_fotografia, boolean Estatus) {
         this.Usuario = Usuario;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -36,6 +36,12 @@ public class Usuario {
         this.Path_fotografia = Path_fotografia;
         this.Estatus = Estatus;
     }
+
+    @Override
+    public String toString() {
+        return "" + Usuario + "|" + Nombre + "|" + Apellido + "|" + Password + "|" + Rol + "|" + fecha_nacimiento + "|" + correo_alterno + "|" + Telefono + "|" + Path_fotografia + "|" + Estatus ;
+    }
+    
 
     public String getUsuario() {
         return Usuario;
@@ -69,13 +75,7 @@ public class Usuario {
         this.Password = Password;
     }
 
-    public byte getRol() {
-        return Rol;
-    }
-
-    public void setRol(byte Rol) {
-        this.Rol = Rol;
-    }
+   
 
     public Date getFecha_nacimiento() {
         return fecha_nacimiento;
@@ -109,13 +109,23 @@ public class Usuario {
         this.Path_fotografia = Path_fotografia;
     }
 
-    public byte getEstatus() {
+    public boolean isRol() {
+        return Rol;
+    }
+
+    public void setRol(boolean Rol) {
+        this.Rol = Rol;
+    }
+
+    public boolean isEstatus() {
         return Estatus;
     }
 
-    public void setEstatus(byte Estatus) {
+    public void setEstatus(boolean Estatus) {
         this.Estatus = Estatus;
     }
+
+    
     
     
     
