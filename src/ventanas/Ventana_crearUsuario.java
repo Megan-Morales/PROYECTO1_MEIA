@@ -6,6 +6,7 @@
 package ventanas;
 import ventanas.Ventana_login;
 import clases.Usuario;
+import clases.contrasena;
 import ventanas.Ventana_cargarImagen;
 import java.io.File;
 import java.awt.Image;
@@ -53,7 +54,6 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         jTextField2 = new javax.swing.JTextField();
         jTextField3 = new javax.swing.JTextField();
         jPasswordField1 = new javax.swing.JPasswordField();
-        jCalendar1 = new com.toedter.calendar.JCalendar();
         jButton1 = new javax.swing.JButton();
         jLabel9 = new javax.swing.JLabel();
         btn_imagen = new javax.swing.JButton();
@@ -103,7 +103,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -120,18 +120,15 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                                     .addComponent(jLabel7)
                                     .addComponent(jLabel8))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 255, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jTextField1)
-                                            .addComponent(jTextField2)
-                                            .addComponent(jTextField3)
-                                            .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
-                                            .addComponent(jTextField4)
-                                            .addComponent(jTextField5))
-                                        .addGap(18, 18, 18)
-                                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jTextField1)
+                                    .addComponent(jTextField2)
+                                    .addComponent(jTextField3)
+                                    .addComponent(jPasswordField1, javax.swing.GroupLayout.DEFAULT_SIZE, 162, Short.MAX_VALUE)
+                                    .addComponent(jTextField4)
+                                    .addComponent(jTextField5))
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -176,10 +173,8 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addComponent(jLabel6)
+                .addGap(166, 166, 166)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(btn_imagen, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -198,6 +193,20 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Usuario usuarioNuevo = new Usuario("","","", "",false ,null, "", 0, "", false );
+        
+        String Password = new String(jPasswordField1.getPassword());
+        
+        String resultado = contrasena.verificar(Password);
+        
+        if (resultado == "Debe ser mayor a 6 caracteres." || resultado == "Contraseña Insegura" | resultado == "Contraseña poco Segura") {
+            
+            jLabel10.setText(resultado);
+            jPasswordField1.setText("");
+        }
+        else
+        {
+            jLabel10.setText(resultado);
+        }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -266,7 +275,6 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_imagen;
     private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
