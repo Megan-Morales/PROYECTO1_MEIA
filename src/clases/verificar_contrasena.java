@@ -5,7 +5,7 @@ public class verificar_contrasena {
     {
         if (Password.length()< 6)
         {
-           return "error";
+           return "Debe ser mayor a 6 caracteres.";
         }  
         else
         {
@@ -77,11 +77,11 @@ public class verificar_contrasena {
             
             if (Puntuacion >= 0 && Puntuacion <= 25) {
                 
-                return "Contraseña Insegura...";
+                return "Contraseña Insegura";
             }
             else if (Puntuacion >= 26 && Puntuacion <= 35) {
                 
-                return "Contraseña poco Segura...";
+                return "Contraseña poco Segura";
             }
             else if (Puntuacion >= 36 && Puntuacion <= 50) {
                 
