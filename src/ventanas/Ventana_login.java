@@ -167,12 +167,7 @@ public class Ventana_login extends javax.swing.JFrame {
                        encontro= true;
                        break;
                     }
-                }
-                else{
-                    
-                }
-                
-                
+                } 
             }
             
             while((lineaArchivo2 = bitacoraUsuariol.readLine()) != null && encontro== false ){
