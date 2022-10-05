@@ -6,6 +6,7 @@
 package ventanas;
 import ventanas.Ventana_login;
 import clases.Usuario;
+import clases.contrasena;
 import ventanas.Ventana_cargarImagen;
 import java.io.File;
 import java.awt.Image;
@@ -102,7 +103,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jLabel1)
@@ -127,7 +128,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                                     .addComponent(jTextField4)
                                     .addComponent(jTextField5))
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(layout.createSequentialGroup()
@@ -192,6 +193,20 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         Usuario usuarioNuevo = new Usuario("","","", "",false ,null, "", 0, "", false );
+        
+        String Password = new String(jPasswordField1.getPassword());
+        
+        String resultado = contrasena.verificar(Password);
+        
+        if (resultado == "Debe ser mayor a 6 caracteres." || resultado == "Contraseña Insegura" | resultado == "Contraseña poco Segura") {
+            
+            jLabel10.setText(resultado);
+            jPasswordField1.setText("");
+        }
+        else
+        {
+            jLabel10.setText(resultado);
+        }
         
         
     }//GEN-LAST:event_jButton1ActionPerformed
