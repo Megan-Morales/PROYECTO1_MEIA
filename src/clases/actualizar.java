@@ -17,7 +17,7 @@ import java.util.Collections;
  */
 public class actualizar {
 
-   
+    
     public static void actualizar(String llave, String valor, int index) throws IOException
     {
         BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/ejemplo.txt"));
@@ -68,6 +68,62 @@ public class actualizar {
             writer.write("\r\n");
         }
         writer.close();
+        
+        
+    }
+    
+    public static void actualizar2 (String llave, String valor, int index) throws IOException
+    {
+        BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/ejemplo.txt"));
+        
+        ArrayList<String> str = new ArrayList<>();
+        String line = "";
+        
+        while ((line = reader.readLine()) != null)
+        {
+            
+                String[] split = line.split("\\|");
+                String prueba = split[1];
+                
+                if (prueba.equals(llave)) 
+                {
+                    split[index] = "";
+                    split[index] = valor;
+                    
+                    String newLine = "";
+                    for (int i=0; i<split.length; i++)
+                    {
+                        if (i == 9) {
+                           newLine += split[i]; 
+                        }
+                        else
+                        {
+                           newLine += split[i] + "|" ;
+                        }
+                     
+                        
+                    }
+                    str.add(newLine);
+                }  
+                else
+                {
+                    str.add(line);
+                }    
+                
+        }
+        reader.close();
+        
+        
+        
+        FileWriter writer = new FileWriter("/Users/emilio/Desktop/ejemplo.txt");
+        for (String s: str)
+        {
+            writer.write(s);
+            writer.write("\r\n");
+        }
+        writer.close();
+        
+        
     }
     
 }
