@@ -35,7 +35,7 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabelFoto" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
+                          <Component id="LabelFoto" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
@@ -109,7 +109,7 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabelFoto" min="-2" pref="209" max="-2" attributes="0"/>
+                      <Component id="LabelFoto" min="-2" pref="209" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -176,7 +176,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabelFoto">
+    <Component class="javax.swing.JLabel" name="LabelFoto">
       <Properties>
         <Property name="text" type="java.lang.String" value="jLabel1"/>
       </Properties>

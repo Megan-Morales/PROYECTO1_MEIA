@@ -5,7 +5,9 @@
  */
 package ventanas;
 
+import java.awt.image.BufferedImage;
 import java.io.File;
+import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -17,11 +19,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 public class Ventana_Usuario extends javax.swing.JFrame {
     File archivo;
+    String usuarioNombre = Ventana_login.usuarioNombre;
+    
     /**
      * Creates new form Ventana_Usuario
      */
-    public Ventana_Usuario() {
+    public Ventana_Usuario() {  
         initComponents();
+        label_usuario.setText(usuarioNombre);
     }
 
     /**
@@ -33,7 +38,7 @@ public class Ventana_Usuario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabelFoto = new javax.swing.JLabel();
+        LabelFoto = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         label_usuario = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -60,7 +65,7 @@ public class Ventana_Usuario extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabelFoto.setText("jLabel1");
+        LabelFoto.setText("jLabel1");
 
         jLabel2.setText("Usuario: ");
 
@@ -119,7 +124,7 @@ public class Ventana_Usuario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(35, 35, 35)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -174,7 +179,7 @@ public class Ventana_Usuario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(LabelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
@@ -285,8 +290,23 @@ public class Ventana_Usuario extends javax.swing.JFrame {
             }
         });
     }
+    
+    public void colocarImagen (String path){
+        try{
+            File file = new File(path);
+            BufferedImage bufferedImage = ImageIO.read(file);
+            ImageIcon imageIcon = new ImageIcon(bufferedImage);
+            
+            
+            
+        }
+        catch(Exception error){
+            
+        }
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LabelFoto;
     private javax.swing.JButton btn_imagen;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
@@ -304,7 +324,6 @@ public class Ventana_Usuario extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
-    private javax.swing.JLabel jLabelFoto;
     private javax.swing.JPasswordField jPasswordField1;
     private javax.swing.JTextField jPath;
     private javax.swing.JTextField jTextField4;
