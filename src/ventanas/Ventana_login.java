@@ -26,6 +26,7 @@ import ventanas.Ventana_Administrador;
 public class Ventana_login extends javax.swing.JFrame {
     
     static String usuarioNombre ;
+    static String pathUsuario;
     
     /**
      * Creates new form Ventana_login
@@ -51,7 +52,6 @@ public class Ventana_login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btn_crearUsuario = new javax.swing.JButton();
-        contar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -60,6 +60,18 @@ public class Ventana_login extends javax.swing.JFrame {
         jLabel2.setText("Contraseña:");
 
         jLabel3.setText("Login");
+
+        txt_usuarioLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_usuarioLoginKeyTyped(evt);
+            }
+        });
+
+        txt_contrasenaLogin.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_contrasenaLoginKeyTyped(evt);
+            }
+        });
 
         jLabel4.setText("¿Nuevo? Crea tu usuario aquí");
 
@@ -74,13 +86,6 @@ public class Ventana_login extends javax.swing.JFrame {
         btn_crearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_crearUsuarioActionPerformed(evt);
-            }
-        });
-
-        contar.setText("contar");
-        contar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                contarActionPerformed(evt);
             }
         });
 
@@ -107,8 +112,7 @@ public class Ventana_login extends javax.swing.JFrame {
                                     .addGap(16, 16, 16)
                                     .addComponent(jLabel1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txt_usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(contar)))
+                                    .addComponent(txt_usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(jLabel3))
@@ -120,9 +124,7 @@ public class Ventana_login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(contar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(42, 42, 42)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -173,18 +175,20 @@ public class Ventana_login extends javax.swing.JFrame {
                 if(columnas[0].equals(usuarioBuscar) && columnas[3].equals(contrasenaBuscar)){
                     if(columnas[4].equals("1")){
                         usuarioNombre =columnas[0];
+                        pathUsuario = columnas[8];
+                        encontro= true;
                         Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
                         ventanaAdmin.setVisible(true);
                         this.dispose(); //cerrar a ventana abierta
-                        encontro= true;
                         break;
                     }
                     else{
                         usuarioNombre =columnas[0];
+                        pathUsuario = columnas[8];
+                        encontro= true;
                         Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
                         ventanaUsuario.setVisible(true);
                         this.dispose(); //cerrar a ventana abierta 
-                        encontro= true;
                         break;
                     }
                 } 
@@ -196,6 +200,8 @@ public class Ventana_login extends javax.swing.JFrame {
                 if(columnas2[0].equals(usuarioBuscar) && columnas2[3].equals(contrasenaBuscar)){
                     if(columnas2[4].equals("1")){
                        usuarioNombre =columnas2[0];
+                       pathUsuario = columnas2[8];
+                       encontro= true;
                        Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
                        ventanaAdmin.setVisible(true);
                        this.dispose(); //cerrar a ventana abierta
@@ -203,15 +209,17 @@ public class Ventana_login extends javax.swing.JFrame {
                     }
                     else{
                         usuarioNombre =columnas2[0];
+                        pathUsuario = columnas2[8];
+                        encontro= true;
                         Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
                         ventanaUsuario.setVisible(true);
                         this.dispose(); //cerrar a ventana abierta  
                         break;
                     }
                 }
-                else{
-                    JOptionPane.showMessageDialog(null, "El usuario no existe o verifique la contraseña");
-                }
+            }
+            if(encontro==false){
+                JOptionPane.showMessageDialog(null, "El usuario no existe o verifique la contraseña");
             }
             
              
@@ -229,14 +237,17 @@ public class Ventana_login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed
 
-    private void contarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contarActionPerformed
-        try {
-            // TODO add your handling code here:
-            contar_usuario.contar();
-        } catch (IOException ex) {
-            Logger.getLogger(Ventana_login.class.getName()).log(Level.SEVERE, null, ex);
+    private void txt_usuarioLoginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarioLoginKeyTyped
+       if(txt_usuarioLogin.getText().length()>=20){
+            evt.consume();
         }
-    }//GEN-LAST:event_contarActionPerformed
+    }//GEN-LAST:event_txt_usuarioLoginKeyTyped
+
+    private void txt_contrasenaLoginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contrasenaLoginKeyTyped
+        if(txt_contrasenaLogin.getText().length()>=40){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_contrasenaLoginKeyTyped
 
     /**
      * @param args the command line arguments
@@ -275,7 +286,6 @@ public class Ventana_login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_crearUsuario;
-    private javax.swing.JButton contar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
