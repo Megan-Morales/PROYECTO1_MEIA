@@ -25,19 +25,18 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-          </Group>
-          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="238" max="-2" attributes="0"/>
+                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jPath" min="-2" pref="162" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="btn_imagen" min="-2" pref="84" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="LabelFoto" alignment="0" min="-2" pref="197" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="jLabel3" alignment="1" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabel2" alignment="1" min="-2" max="-2" attributes="0"/>
@@ -47,6 +46,12 @@
                                   <Component id="label_usuario" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="label_usuario_rol" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
+                          </Group>
+                          <Component id="LabelFoto" min="-2" pref="225" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jButton5" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -67,7 +72,7 @@
                                   <Group type="102" attributes="0">
                                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                           <Component id="jPasswordField1" max="32767" attributes="0"/>
-                                          <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="txt_Telefono" alignment="0" max="32767" attributes="0"/>
                                           <Component id="jTextField5" alignment="0" pref="162" max="32767" attributes="0"/>
                                       </Group>
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -90,14 +95,6 @@
                           </Group>
                       </Group>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="262" max="-2" attributes="0"/>
-                      <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jPath" min="-2" pref="162" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="btn_imagen" min="-2" pref="84" max="-2" attributes="0"/>
-                  </Group>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
@@ -109,8 +106,8 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="LabelFoto" min="-2" pref="209" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="LabelFoto" min="-2" pref="231" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="label_usuario" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -140,7 +137,7 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="txt_Telefono" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -159,27 +156,24 @@
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="27" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="btn_imagen" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                   <Component id="jPath" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jButton5" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
     <Component class="javax.swing.JLabel" name="LabelFoto">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
-      </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel2">
       <Properties>
@@ -211,7 +205,10 @@
         <Property name="text" type="java.lang.String" value="Mantenimiento de usuario"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="jTextField4">
+    <Component class="javax.swing.JTextField" name="txt_Telefono">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_TelefonoKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel8">
       <Properties>
@@ -219,6 +216,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jTextField5">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTextField5KeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel11">
       <Properties>
@@ -244,6 +244,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jPath">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPathKeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jButton2">
       <Properties>
@@ -261,6 +264,9 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JPasswordField" name="jPasswordField1">
+      <Events>
+        <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jPasswordField1KeyTyped"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel5">
       <Properties>
