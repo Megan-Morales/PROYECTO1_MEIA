@@ -375,8 +375,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
             pw = new PrintWriter(bw); 
             
             pw.println(strContenido);   
-            pw.flush();
-                               
+            pw.flush();                   
         }
         finally 
         {
