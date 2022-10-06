@@ -11,20 +11,27 @@ public class sort_log
 {
     public static void reorganizar() throws FileNotFoundException, IOException
     {
-        BufferedReader reader = new BufferedReader(new FileReader("C:\\MEIA\\bitacora_usuario.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/ejemplo.txt"));
         
         ArrayList<String> str = new ArrayList<>();
         String line = "";
         
         while ((line = reader.readLine()) != null)
         {
-            str.add(line);
+            
+                String[] split = line.split("\\|");
+                String prueba = split[9];
+                
+                if (prueba.equals("1")) 
+                {
+                    str.add(line);
+                }                        
         }
         reader.close();
         
         Collections.sort(str);
         
-        FileWriter writer = new FileWriter("C:\\MEIA\\bitacora_usuario.txt");
+        FileWriter writer = new FileWriter("/Users/emilio/Desktop/ejemplo.txt");
         for (String s: str)
         {
             writer.write(s);

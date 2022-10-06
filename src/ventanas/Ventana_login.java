@@ -231,11 +231,12 @@ public class Ventana_login extends javax.swing.JFrame {
 
     private void contarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contarActionPerformed
         try {
-            // TODO add your handling code here:
-            contar_usuario.contar();
+            sort_log.reorganizar();
         } catch (IOException ex) {
             Logger.getLogger(Ventana_login.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        
     }//GEN-LAST:event_contarActionPerformed
 
     /**
