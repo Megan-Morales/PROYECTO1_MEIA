@@ -3,15 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/ventanas/Ventana_crearUsuario.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/clases/contar_usuario.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/clases/Usuario.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/clases/sort_log.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/ventanas/Ventana_cargarImagen.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/clases/contrasena.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/ventanas/Ventana_login.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/proyecto1_meia/Proyecto1_MEIA.java</file>
-            <file>file:/Users/emilio/Desktop/proyecto_MEIA/src/clases/reorganizar.java</file>
+            <file>file:/C:/Users/megan/OneDrive/Escritorio/Megan/proyectos_oficial/Java/PROYECTO1_MEIA/src/ventanas/Ventana_Administrador.java</file>
+            <file>file:/C:/Users/megan/OneDrive/Escritorio/Megan/proyectos_oficial/Java/PROYECTO1_MEIA/src/ventanas/Ventana_login.java</file>
+            <file>file:/C:/Users/megan/OneDrive/Escritorio/Megan/proyectos_oficial/Java/PROYECTO1_MEIA/src/ventanas/Ventana_crearUsuario.java</file>
+            <file>file:/C:/Users/megan/OneDrive/Escritorio/Megan/proyectos_oficial/Java/PROYECTO1_MEIA/src/ventanas/Ventana_Usuario.java</file>
         </group>
     </open-files>
 </project-private>
