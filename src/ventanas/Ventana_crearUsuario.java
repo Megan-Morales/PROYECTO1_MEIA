@@ -69,6 +69,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         txt_correo = new javax.swing.JTextField();
         jLabel10 = new javax.swing.JLabel();
         jCalendar1 = new com.toedter.calendar.JCalendar();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -106,6 +107,13 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
 
         jLabel10.setText("Nivel: ");
 
+        jButton2.setText("Volver");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -133,11 +141,11 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                                     .addComponent(txt_telefono)
                                     .addComponent(txt_correo))
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE))
+                                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                .addGap(96, 96, 96))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jCalendar1, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(19, 19, 19))
+                                .addGap(0, 153, Short.MAX_VALUE))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -154,13 +162,17 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(174, 174, 174)
                 .addComponent(jLabel1)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(27, 27, 27))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel1)
+                .addGap(14, 14, 14)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
@@ -197,7 +209,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                     .addComponent(jPath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
@@ -244,7 +256,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                 String lineaArchivo2;
 
                 boolean encontro= false;  
-                if((lineaArchivo1 = usuariol.readLine()) == null && (lineaArchivo2 = bitacoraUsuariol.readLine()) == null ){
+                if((lineaArchivo1 = usuariol.readLine()) == null && (lineaArchivo2 = bitacoraUsuariol.readLine())==null ){
                     Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, Password ,1 ,Fecha, Correo, Telefono,Path, 1);
                     if(LlenarArchivo("C:\\MEIA\\usuario.txt", usuarioNuevo.toString(), strError)){
                         JOptionPane.showMessageDialog(null, "Se ingreso correctamente el registro: ", "Guardar", WIDTH);
@@ -281,13 +293,8 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                 }
             }
             catch(Exception error){
-                
-            }
-                
-            
-            
-            
-            
+                JOptionPane.showMessageDialog(null, "Error " + error);
+            }                
         }
         
         
@@ -318,6 +325,12 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_btn_imagenActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        Ventana_login ventana = new Ventana_login();
+        ventana.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -399,6 +412,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_imagen;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private com.toedter.calendar.JCalendar jCalendar1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;

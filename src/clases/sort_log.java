@@ -11,7 +11,7 @@ public class sort_log
 {
     public static void reorganizar() throws FileNotFoundException, IOException
     {
-        BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/ejemplo.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("\"C:\\MEIA\\bitacora_usuario.txt\""));
         
         ArrayList<String> str = new ArrayList<>();
         String line = "";
@@ -24,7 +24,7 @@ public class sort_log
         
         Collections.sort(str);
         
-        FileWriter writer = new FileWriter("/Users/emilio/Desktop/ejemplo.txt");
+        FileWriter writer = new FileWriter("\"C:\\MEIA\\bitacora_usuario.txt\"");
         for (String s: str)
         {
             writer.write(s);
