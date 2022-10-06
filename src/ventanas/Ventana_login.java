@@ -155,7 +155,7 @@ public class Ventana_login extends javax.swing.JFrame {
             boolean encontro= false;
             
             while((lineaArchivo1 = usuariol.readLine()) != null ){
-                columnas = lineaArchivo1.split(";");
+                columnas = lineaArchivo1.split("\\|");
             
                 if(columnas[0].equals(usuarioBuscar) && columnas[3].equals(contrasenaBuscar)){
                     if(columnas[4].equals("1")){
@@ -176,7 +176,7 @@ public class Ventana_login extends javax.swing.JFrame {
             }
             
             while((lineaArchivo2 = bitacoraUsuariol.readLine()) != null && encontro== false ){
-                columnas2 = lineaArchivo2.split(";");
+                columnas2 = lineaArchivo2.split("\\|");
                 
                 if(columnas2[0].equals(usuarioBuscar) && columnas2[3].equals(contrasenaBuscar)){
                     if(columnas2[4].equals("1")){

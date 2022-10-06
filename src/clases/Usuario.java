@@ -17,14 +17,14 @@ public class Usuario {
     String Nombre;
     String Apellido;
     String Password;
-    boolean Rol;
+    int Rol;
     Date fecha_nacimiento;
     String correo_alterno;
     int Telefono;
     String Path_fotografia;
-    boolean Estatus;
+    int Estatus;
 
-    public Usuario(String Usuario, String Nombre, String Apellido, String Password, boolean Rol, Date fecha_nacimiento, String correo_alterno, int Telefono, String Path_fotografia, boolean Estatus) {
+    public Usuario(String Usuario, String Nombre, String Apellido, String Password, int Rol, Date fecha_nacimiento, String correo_alterno, int Telefono, String Path_fotografia, int Estatus) {
         this.Usuario = Usuario;
         this.Nombre = Nombre;
         this.Apellido = Apellido;
@@ -109,24 +109,19 @@ public class Usuario {
         this.Path_fotografia = Path_fotografia;
     }
 
-    public boolean isRol() {
+    public int getRol() {
         return Rol;
     }
 
-    public void setRol(boolean Rol) {
+    public void setRol(int Rol) {
         this.Rol = Rol;
     }
 
-    public boolean isEstatus() {
+    public int getEstatus() {
         return Estatus;
     }
 
-    public void setEstatus(boolean Estatus) {
+    public void setEstatus(int Estatus) {
         this.Estatus = Estatus;
     }
-
-    
-    
-    
-    
 }
