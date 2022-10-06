@@ -6,6 +6,7 @@
 package ventanas;
 
 import java.io.File;
+import ventanas.Ventana_login;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
@@ -16,12 +17,15 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  * @author megan
  */
 public class Ventana_Administrador extends javax.swing.JFrame {
-
+    String usuarioNombre = Ventana_login.usuarioNombre;
+    
     /**
      * Creates new form Ventana_Administrador
      */
     public Ventana_Administrador() {
+        
         initComponents();
+        label_usuario.setText(usuarioNombre);
     }
 
     /**

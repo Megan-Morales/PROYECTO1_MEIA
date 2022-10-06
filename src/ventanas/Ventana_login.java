@@ -24,6 +24,7 @@ import ventanas.Ventana_Administrador;
  */
 public class Ventana_login extends javax.swing.JFrame {
     
+    static String usuarioNombre ;
     
     /**
      * Creates new form Ventana_login
@@ -159,18 +160,20 @@ public class Ventana_login extends javax.swing.JFrame {
             
                 if(columnas[0].equals(usuarioBuscar) && columnas[3].equals(contrasenaBuscar)){
                     if(columnas[4].equals("1")){
-                       Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
-                       ventanaAdmin.setVisible(true);
-                       this.dispose(); //cerrar a ventana abierta
-                       encontro= true;
-                       break;
+                        usuarioNombre =columnas[0];
+                        Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
+                        ventanaAdmin.setVisible(true);
+                        this.dispose(); //cerrar a ventana abierta
+                        encontro= true;
+                        break;
                     }
                     else{
-                      Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
-                       ventanaUsuario.setVisible(true);
-                       this.dispose(); //cerrar a ventana abierta 
-                       encontro= true;
-                       break;
+                        usuarioNombre =columnas[0];
+                        Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
+                        ventanaUsuario.setVisible(true);
+                        this.dispose(); //cerrar a ventana abierta 
+                        encontro= true;
+                        break;
                     }
                 } 
             }
@@ -180,16 +183,18 @@ public class Ventana_login extends javax.swing.JFrame {
                 
                 if(columnas2[0].equals(usuarioBuscar) && columnas2[3].equals(contrasenaBuscar)){
                     if(columnas2[4].equals("1")){
+                       usuarioNombre =columnas2[0];
                        Ventana_Administrador ventanaAdmin = new Ventana_Administrador();
                        ventanaAdmin.setVisible(true);
                        this.dispose(); //cerrar a ventana abierta
                        break;
                     }
                     else{
-                      Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
-                       ventanaUsuario.setVisible(true);
-                       this.dispose(); //cerrar a ventana abierta  
-                       break;
+                        usuarioNombre =columnas2[0];
+                        Ventana_Usuario ventanaUsuario = new Ventana_Usuario();
+                        ventanaUsuario.setVisible(true);
+                        this.dispose(); //cerrar a ventana abierta  
+                        break;
                     }
                 }
                 else{
