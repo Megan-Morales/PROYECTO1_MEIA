@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package proyecto1_meia;
+import clases.backup;
 import clases.sort_log;
 import java.io.IOException;
 import ventanas.Ventana_login;
@@ -13,15 +14,14 @@ import ventanas.Ventana_login;
  */
 public class Proyecto1_MEIA {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) throws IOException {
         // TODO code application logic here
         
         
         Ventana_login menu = new Ventana_login();
         menu.setVisible(true);
+        
+        backup.main(args);
         
         
     }
