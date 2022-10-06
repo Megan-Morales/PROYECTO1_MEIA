@@ -5,7 +5,6 @@
  */
 package ventanas;
 
-import clases.Usuario;
 import clases.contar_usuario;
 import clases.reorganizar;
 import clases.sort_log;
@@ -13,6 +12,9 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -154,7 +156,7 @@ public class Ventana_login extends javax.swing.JFrame {
         try{
             
             String usuarioBuscar = txt_usuarioLogin.getText();
-            String contrasenaBuscar = txt_contrasenaLogin.getText();
+            String contrasenaBuscar = getMD5(txt_contrasenaLogin.getText());
            
             File usuario = new File("C:\\MEIA\\usuario.txt");
             File bitacoraUsuario = new File("C:\\MEIA\\bitacora_usuario.txt");
@@ -282,6 +284,22 @@ public class Ventana_login extends javax.swing.JFrame {
                 new Ventana_login().setVisible(true);
             }
         });
+    }
+    public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+            hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

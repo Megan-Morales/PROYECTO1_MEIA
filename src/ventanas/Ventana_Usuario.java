@@ -8,6 +8,7 @@ package ventanas;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -78,6 +79,11 @@ public class Ventana_Usuario extends javax.swing.JFrame {
         label_usuario_rol.setText("Usuario");
 
         jButton1.setText("Actualizar ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Mantenimiento de usuario");
 
@@ -115,8 +121,18 @@ public class Ventana_Usuario extends javax.swing.JFrame {
         });
 
         jButton2.setText("Actualizar ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Actualizar ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Nivel: ");
 
@@ -129,11 +145,21 @@ public class Ventana_Usuario extends javax.swing.JFrame {
         jLabel5.setText("Contraseña:");
 
         jButton4.setText("Actualizar ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setText("¿Cerrar cuenta?");
 
         jButton5.setBackground(new java.awt.Color(204, 0, 0));
         jButton5.setText("Si");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -302,6 +328,31 @@ public class Ventana_Usuario extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jPathKeyTyped
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String Password = jPasswordField1.getText();
+        
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String Correo = jTextField5.getText();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int Telefono = Integer.parseInt(txt_Telefono.getText());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+       Date Fecha = jCalendar1.getDate();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    /**
+     * cerrar cuenta
+     * @param evt 
+     */
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
