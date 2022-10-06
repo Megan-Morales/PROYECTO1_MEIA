@@ -239,17 +239,7 @@ public class Ventana_login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed
 
-    private void txt_usuarioLoginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarioLoginKeyTyped
-       if(txt_usuarioLogin.getText().length()>=20){
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_usuarioLoginKeyTyped
 
-    private void txt_contrasenaLoginKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_contrasenaLoginKeyTyped
-        if(txt_contrasenaLogin.getText().length()>=40){
-            evt.consume();
-        }
-    }//GEN-LAST:event_txt_contrasenaLoginKeyTyped
 
     /**
      * @param args the command line arguments
