@@ -17,6 +17,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -92,6 +95,30 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
 
         jLabel8.setText("Teléfono:");
 
+        txt_Nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_NombreKeyTyped(evt);
+            }
+        });
+
+        txt_Apellido.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_ApellidoKeyTyped(evt);
+            }
+        });
+
+        txt_usuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_usuarioKeyTyped(evt);
+            }
+        });
+
+        jPasswordField1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPasswordField1KeyTyped(evt);
+            }
+        });
+
         jButton1.setText("Crear usuario");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -105,6 +132,24 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         btn_imagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_imagenActionPerformed(evt);
+            }
+        });
+
+        jPath.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                jPathKeyTyped(evt);
+            }
+        });
+
+        txt_telefono.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_telefonoKeyTyped(evt);
+            }
+        });
+
+        txt_correo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txt_correoKeyTyped(evt);
             }
         });
 
@@ -247,7 +292,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
             jPasswordField1.setText("");
         }
         else
-        {
+        {   
             jLabel10.setText(resultado);
             try {
                 contar_usuario.contar();
@@ -267,7 +312,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
 
                 boolean encontro= false;  
                 if((lineaArchivo1 = usuariol.readLine()) == null && (lineaArchivo2 = bitacoraUsuariol.readLine())==null ){
-                    Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, Password ,1 ,Fecha, Correo, Telefono,Path, 1);
+                    Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, getMD5(Password),1 ,Fecha, Correo, Telefono,Path, 1);
                     if(LlenarArchivo("C:\\MEIA\\usuario.txt", usuarioNuevo.toString(), strError)){
                         JOptionPane.showMessageDialog(null, "Se ingreso correctamente el registro: ", "Guardar", WIDTH);
                         Ventana_login login = new Ventana_login();
@@ -292,7 +337,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                         }
                     }
                     if(encontro == false){
-                        Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, Password ,0 ,Fecha, Correo, Telefono,Path, 1);
+                        Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, getMD5(Password) ,0 ,Fecha, Correo, Telefono,Path, 1);
                         if(LlenarArchivo("C:\\MEIA\\usuario.txt", usuarioNuevo.toString(), strError)){
                             JOptionPane.showMessageDialog(null, "Se ingreso correctamente el registro: ", "Guardar", WIDTH);
                             Ventana_login login = new Ventana_login();
@@ -341,6 +386,48 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         ventana.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txt_NombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_NombreKeyTyped
+        if(txt_Nombre.getText().length()>=30){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_NombreKeyTyped
+
+    private void txt_ApellidoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_ApellidoKeyTyped
+        if(txt_Apellido.getText().length()>=30){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_ApellidoKeyTyped
+
+    private void txt_usuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_usuarioKeyTyped
+        if(txt_usuario.getText().length()>=20){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_usuarioKeyTyped
+
+    private void jPasswordField1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPasswordField1KeyTyped
+       if(jPasswordField1.getText().length()>=40){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jPasswordField1KeyTyped
+
+    private void txt_correoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_correoKeyTyped
+        if(txt_correo.getText().length()>=40){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_correoKeyTyped
+
+    private void txt_telefonoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txt_telefonoKeyTyped
+        if(txt_telefono.getText().length()>=8){
+            evt.consume();
+        }
+    }//GEN-LAST:event_txt_telefonoKeyTyped
+
+    private void jPathKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jPathKeyTyped
+        if(jPath.getText().length()>=200){
+            evt.consume();
+        }
+    }//GEN-LAST:event_jPathKeyTyped
 
     /**
      * @param args the command line arguments
@@ -417,6 +504,23 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
             }
         }
         
+    }
+    
+    public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+            hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
