@@ -20,16 +20,21 @@ public class actualizar {
     
     public static void actualizar(String llave, String valor, int index) throws IOException
     {
-        BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/ejemplo.txt"));
+       
+        BufferedReader reader = new BufferedReader(new FileReader("C:\\MEIA\\bitacora_usuario.txt"));
         
         ArrayList<String> str = new ArrayList<>();
         String line = "";
         
+        
         while ((line = reader.readLine()) != null)
         {
-            
+                if(line.equals(""))
+                {
+                    break;
+                }
                 String[] split = line.split("\\|");
-                String prueba = split[1];
+                String prueba = split[0];
                 
                 if (prueba.equals(llave)) 
                 {
@@ -54,14 +59,17 @@ public class actualizar {
                 else
                 {
                     str.add(line);
-                }    
-                
+                }  
+            
+            
+                            
         }
         reader.close();
         
         Collections.sort(str);
         
-        FileWriter writer = new FileWriter("/Users/emilio/Desktop/ejemplo.txt");
+      
+        FileWriter writer = new FileWriter("C:\\MEIA\\bitacora_usuario.txt");
         for (String s: str)
         {
             writer.write(s);
@@ -69,25 +77,30 @@ public class actualizar {
         }
         writer.close();
         
+        sort_log.reorganizar();
+        
         
     }
     
     public static void actualizar2 (String llave, String valor, int index) throws IOException
     {
-        BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/ejemplo.txt"));
+        BufferedReader reader = new BufferedReader(new FileReader("C:\\MEIA\\usuario.txt"));
         
         ArrayList<String> str = new ArrayList<>();
         String line = "";
         
         while ((line = reader.readLine()) != null)
         {
-            
+                if(line.equals(""))
+                {
+                    break;
+                }
                 String[] split = line.split("\\|");
-                String prueba = split[1];
+                String prueba = split[0];
                 
                 if (prueba.equals(llave)) 
                 {
-                    split[index] = "";
+                    
                     split[index] = valor;
                     
                     String newLine = "";
@@ -115,7 +128,7 @@ public class actualizar {
         
         
         
-        FileWriter writer = new FileWriter("/Users/emilio/Desktop/ejemplo.txt");
+        FileWriter writer = new FileWriter("C:\\MEIA\\usuario.txt");
         for (String s: str)
         {
             writer.write(s);

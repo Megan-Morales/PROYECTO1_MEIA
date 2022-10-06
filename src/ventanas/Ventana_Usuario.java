@@ -6,9 +6,13 @@
 package ventanas;
 
 import java.awt.Image;
+import clases.actualizar;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.io.IOException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -292,6 +296,11 @@ public class Ventana_Usuario extends javax.swing.JFrame {
         if(JFileChooser.APPROVE_OPTION == resultado){
             archivo = buscarImagen.jFileChooser1.getSelectedFile();
             jPath.setText(archivo.getAbsolutePath()); //accedo a la ruta
+            try {
+                actualizar.actualizar(usuarioNombre, archivo.getAbsolutePath() , 8);
+            } catch (IOException ex) {
+                Logger.getLogger(Ventana_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
             try{
                 ImageIcon imagenUusuario = new ImageIcon(archivo.toString());
@@ -331,19 +340,47 @@ public class Ventana_Usuario extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         String Password = jPasswordField1.getText();
-        
+        try {
+            actualizar.actualizar(usuarioNombre, Password, 3);
+            actualizar.actualizar2(usuarioNombre, Password, 3);
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         String Correo = jTextField5.getText();
+        try {
+            actualizar.actualizar(usuarioNombre, Correo, 6);
+            
+            actualizar.actualizar2(usuarioNombre, Correo, 6);
+            
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         int Telefono = Integer.parseInt(txt_Telefono.getText());
+        try {
+            actualizar.actualizar(usuarioNombre, txt_Telefono.getText(), 7);
+            actualizar.actualizar2(usuarioNombre, txt_Telefono.getText(), 7);
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
        Date Fecha = jCalendar1.getDate();
+       try {
+            actualizar.actualizar(usuarioNombre, Fecha.toString(), 5);
+            actualizar.actualizar2(usuarioNombre, Fecha.toString(), 5);
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
@@ -351,7 +388,12 @@ public class Ventana_Usuario extends javax.swing.JFrame {
      * @param evt 
      */
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        
+        try {
+            actualizar.actualizar(usuarioNombre, "0", 9);
+            actualizar.actualizar2(usuarioNombre, "0", 9);
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana_Usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
