@@ -17,6 +17,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -289,7 +292,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
             jPasswordField1.setText("");
         }
         else
-        {
+        {   
             jLabel10.setText(resultado);
             try {
                 contar_usuario.contar();
@@ -309,7 +312,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
 
                 boolean encontro= false;  
                 if((lineaArchivo1 = usuariol.readLine()) == null && (lineaArchivo2 = bitacoraUsuariol.readLine())==null ){
-                    Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, Password ,1 ,Fecha, Correo, Telefono,Path, 1);
+                    Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, getMD5(Password),1 ,Fecha, Correo, Telefono,Path, 1);
                     if(LlenarArchivo("C:\\MEIA\\usuario.txt", usuarioNuevo.toString(), strError)){
                         JOptionPane.showMessageDialog(null, "Se ingreso correctamente el registro: ", "Guardar", WIDTH);
                         Ventana_login login = new Ventana_login();
@@ -334,7 +337,7 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
                         }
                     }
                     if(encontro == false){
-                        Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, Password ,0 ,Fecha, Correo, Telefono,Path, 1);
+                        Usuario usuarioNuevo = new Usuario(Usuario,Nombre,Apellido, getMD5(Password) ,0 ,Fecha, Correo, Telefono,Path, 1);
                         if(LlenarArchivo("C:\\MEIA\\usuario.txt", usuarioNuevo.toString(), strError)){
                             JOptionPane.showMessageDialog(null, "Se ingreso correctamente el registro: ", "Guardar", WIDTH);
                             Ventana_login login = new Ventana_login();
@@ -501,6 +504,23 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
             }
         }
         
+    }
+    
+    public static String getMD5(String input) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("MD5");
+            byte[] messageDigest = md.digest(input.getBytes());
+            BigInteger number = new BigInteger(1, messageDigest);
+            String hashtext = number.toString(16);
+
+            while (hashtext.length() < 32) {
+            hashtext = "0" + hashtext;
+            }
+            return hashtext;
+        }
+        catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
