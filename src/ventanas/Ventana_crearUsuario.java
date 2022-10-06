@@ -6,6 +6,7 @@
 package ventanas;
 import ventanas.Ventana_login;
 import clases.Usuario;
+import clases.contar_usuario;
 import clases.contrasena;
 import ventanas.Ventana_cargarImagen;
 import java.io.File;
@@ -17,6 +18,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
@@ -221,6 +224,8 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
      */
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
+        
+    
         String strError="";
         File usuario = new File("C:\\MEIA\\usuario.txt");
         File bitacoraUsuario = new File("C:\\MEIA\\bitacora_usuario.txt");
@@ -244,6 +249,11 @@ public class Ventana_crearUsuario extends javax.swing.JFrame {
         else
         {
             jLabel10.setText(resultado);
+            try {
+                contar_usuario.contar();
+            } catch (IOException ex) {
+                Logger.getLogger(Ventana_crearUsuario.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
             try{
                 

@@ -6,6 +6,7 @@
 package ventanas;
 
 import clases.Usuario;
+import clases.contar_usuario;
 import clases.reorganizar;
 import clases.sort_log;
 import java.io.BufferedReader;
@@ -49,6 +50,7 @@ public class Ventana_login extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         btn_crearUsuario = new javax.swing.JButton();
+        contar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +73,13 @@ public class Ventana_login extends javax.swing.JFrame {
         btn_crearUsuario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_crearUsuarioActionPerformed(evt);
+            }
+        });
+
+        contar.setText("contar");
+        contar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                contarActionPerformed(evt);
             }
         });
 
@@ -97,7 +106,8 @@ public class Ventana_login extends javax.swing.JFrame {
                                     .addGap(16, 16, 16)
                                     .addComponent(jLabel1)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(txt_usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                    .addComponent(txt_usuarioLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(contar)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(100, 100, 100)
                         .addComponent(jLabel3))
@@ -109,7 +119,9 @@ public class Ventana_login extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(44, 44, 44)
+                .addGap(8, 8, 8)
+                .addComponent(contar)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -212,6 +224,15 @@ public class Ventana_login extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btn_crearUsuarioActionPerformed
 
+    private void contarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_contarActionPerformed
+        try {
+            // TODO add your handling code here:
+            contar_usuario.contar();
+        } catch (IOException ex) {
+            Logger.getLogger(Ventana_login.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_contarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -249,6 +270,7 @@ public class Ventana_login extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_crearUsuario;
+    private javax.swing.JButton contar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
