@@ -15,7 +15,7 @@ public class contar_usuario
     
         public static void clear() throws FileNotFoundException
         {
-            File file = new File("/Users/emilio/Desktop/contar.txt");
+            File file = new File("C:\\MEIA\\usuario.txt");
             PrintWriter writer = new PrintWriter(file);
             writer.print("");
             writer.close(); 
@@ -23,7 +23,7 @@ public class contar_usuario
         public static void contar() throws FileNotFoundException, IOException
         {
             int contador = 0;
-            BufferedReader reader = new BufferedReader(new FileReader("/Users/emilio/Desktop/contar.txt"));
+            BufferedReader reader = new BufferedReader(new FileReader("C:\\MEIA\\usuario.txt"));
 
             ArrayList<String> str = new ArrayList<>();
             String line = "";

@@ -14,7 +14,7 @@ public class reorganizar
         
         try
         {
-            fw = new FileWriter("/Users/emilio/Desktop/ejemplo.txt", true);
+            fw = new FileWriter("C:\\MEIA\\bitacora_usuario.txt", true);
             bw = new BufferedWriter(fw);
             pw = new PrintWriter(bw); 
             
