@@ -8,6 +8,7 @@ package ventanas;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
+import java.util.Date;
 import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import ventanas.Ventana_login;
@@ -98,7 +99,7 @@ public class Ventana_Administrador extends javax.swing.JFrame {
 
         jLabel3.setText("Rol:");
 
-        label_Administrador.setText("Usuario");
+        label_Administrador.setText("Administrador");
 
         txt_Telefono.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -113,8 +114,18 @@ public class Ventana_Administrador extends javax.swing.JFrame {
         jLabel11.setText("Correo alterno:");
 
         jButton4.setText("Actualizar ");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("Actualizar ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jTextField5.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyTyped(java.awt.event.KeyEvent evt) {
@@ -142,8 +153,18 @@ public class Ventana_Administrador extends javax.swing.JFrame {
         });
 
         jButton2.setText("Actualizar ");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Actualizar ");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jLabel10.setText("Nivel: ");
 
@@ -227,6 +248,11 @@ public class Ventana_Administrador extends javax.swing.JFrame {
         });
 
         jButton5.setText("Actualizar ");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         jButton6.setText("Eliminar");
 
@@ -261,9 +287,9 @@ public class Ventana_Administrador extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel2))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(label_usuario)
-                                    .addComponent(label_Administrador, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(label_Administrador, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_usuario))
                             .addComponent(jLabelFoto, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(btn_imagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 181, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -417,7 +443,6 @@ public class Ventana_Administrador extends javax.swing.JFrame {
                         .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                     .addComponent(jLabel7)
                                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -491,8 +516,12 @@ public class Ventana_Administrador extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_btn_imagen1ActionPerformed
 
+    /**
+     * boton buscar usuario
+     * @param evt 
+     */
     private void btn_imagen3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imagen3ActionPerformed
-        // TODO add your handling code here:
+        String usuarioBuscar = jPath2.getText();
     }//GEN-LAST:event_btn_imagen3ActionPerformed
 
     private void btn_imagen2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_imagen2ActionPerformed
@@ -583,8 +612,34 @@ public class Ventana_Administrador extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_jPath1KeyTyped
-    
-    
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        String Password = jPasswordField1.getText();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        String Correo = jTextField5.getText();
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        int Telefono = Integer.parseInt(txt_Telefono.getText());
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        Date Fecha = jCalendar1.getDate();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        String nombre = jTextField1.getText();
+        String apellido = jTextField2.getText();
+        String usuario = jTextField3.getText();
+        String correo = jTextField7.getText();
+        int telefono = Integer.parseInt(jTextField6.getText());
+        Date fecha = jCalendar2.getDate();
+        String path = jPath1.getText();
+        
+    }//GEN-LAST:event_jButton5ActionPerformed
+
     /**
      * @param args the command line arguments
      */
