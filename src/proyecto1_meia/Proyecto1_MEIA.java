@@ -24,6 +24,8 @@ public class Proyecto1_MEIA {
         menu.setVisible(true);
         
         
+        
+        
     }
     
 }

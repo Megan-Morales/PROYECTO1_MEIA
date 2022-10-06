@@ -5,7 +5,10 @@
  */
 package clases;
 
+import java.io.IOException;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -26,6 +29,16 @@ public class descriptor_backup {
         this.fecha_modificacion = fecha_modificacion;
         this.usuario_modificacion = usuario_modificacion;
         this.no_registros = no_registros;
+    }
+
+    @Override
+    public String toString() {
+        try {
+            return "nombre_simbolico=" +  nombre_simbolico + "\n" + ", fecha_creacion=" + fecha_creacion +"\n" + ", usuario_creacion=" + usuario_creacion + "\n" +", fecha_modificacion=" + descriptor.modDate() +"\n" + ", usuario_modificacion=" + descriptor.modUser() +"\n" + ", no_registros=" + descriptor.numRegistros("C:\\MEIA\\bitacora_usuario.txt") +"\n" + ", registros_activos=" + descriptor.numRegistrosActivos("C:\\MEIA\\bitacora_usuario.txt") +"\n" + ", registros_inactivos=" + descriptor.numRegistrosInactivos("C:\\MEIA\\bitacora_usuario.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(desciptor_usuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
     }
     
     
